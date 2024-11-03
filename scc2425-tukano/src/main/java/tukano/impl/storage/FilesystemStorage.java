@@ -22,7 +22,7 @@ public class FilesystemStorage implements BlobStorage {
 	private static final String DEFAULT_ROOT_DIR = "/tmp/";
 
 	private static BlobContainerClient _blobClient;
-	String storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=tukanobackendstorage;AccountKey=oTCWIUSPF/Nb8r82cOx9OFpgWIfF0ve3dBPvG1YZVrhLMcbMyWmTUZzcQg4+RxH/uKGzZ+wfguCk+AStgLNePg==;EndpointSuffix=core.windows.net";
+	String storageConnectionString = "#####";
 	private static final String BLOBS_CONTAINER_NAME = "blobs";
 
 	public FilesystemStorage() {

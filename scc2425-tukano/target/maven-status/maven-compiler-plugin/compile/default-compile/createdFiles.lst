@@ -18,6 +18,7 @@ utils/Random.class
 tukano/clients/rest/RestShortsClient.class
 tukano/impl/rest/utils/CustomLoggingFilter.class
 tukano/api/rest/RestUsers.class
+tukano/impl/rest/TukanoRestServerTomcat.class
 utils/Hex.class
 tukano/clients/rest/RestUsersClient.class
 tukano/impl/rest/RestUsersResource.class
