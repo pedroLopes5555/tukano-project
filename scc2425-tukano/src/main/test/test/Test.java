@@ -62,19 +62,11 @@ public class Test {
 		
 		var token = blobUrl.getQuery().split("=")[1];
 		
-		blobs.upload(blobUrl.toString(), randomBytes( 100 ), token);
+		// blobs.upload(blobUrl.toString(), randomBytes( 100 ), token);
 
+		// blobs.delete("http://DESKTOP-FG3D78E:8080/rest/blobs/liskov+552c8f96-e3ca-431c-bcf1-25a81f15b716?token=aaaaaaaaaaaaaaaaaaaaa", blobId);
 
-		var blobUrl2 = URI.create(s1.value().getBlobUrl());
-		System.out.println( "------->" + blobUrl2 );
-		
-		var blobId2 = new File( blobUrl2.getPath() ).getName();
-		System.out.println( "BlobID:" + blobId2 );
-		
-		var token2 = blobUrl2.getQuery().split("=")[1];
-		
-		blobs.upload(blobUrl2.toString(), randomBytes( 100 ), token2);
-
+		blobs.delete("http://DESKTOP-FG3D78E:8080/rest/blobs/wales", blobId);
 		
 		var s2id = s2.value().getShortId();
 		
