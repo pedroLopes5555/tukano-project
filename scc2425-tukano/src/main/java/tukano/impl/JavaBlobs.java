@@ -1,13 +1,12 @@
 package tukano.impl;
 
 import static java.lang.String.format;
-import static tukano.api.Result.error;
-import static tukano.api.Result.ErrorCode.FORBIDDEN;
-
 import java.util.logging.Logger;
 
 import tukano.api.Blobs;
 import tukano.api.Result;
+import static tukano.api.Result.ErrorCode.FORBIDDEN;
+import static tukano.api.Result.error;
 import tukano.impl.rest.TukanoRestServer;
 import tukano.impl.storage.BlobStorage;
 import tukano.impl.storage.FilesystemStorage;
@@ -37,8 +36,8 @@ public class JavaBlobs implements Blobs {
 	public Result<Void> upload(String blobId, byte[] bytes, String token) {
 		Log.info(() -> format("upload : blobId = %s, sha256 = %s, token = %s\n", blobId, Hex.of(Hash.sha256(bytes)), token));
 
-		if (!validBlobId(blobId, token))
-			return error(FORBIDDEN);
+		// if (!validBlobId(blobId, token))
+		// 	return error(FORBIDDEN);
 
 		return storage.write( toPath( blobId ), bytes);
 	}

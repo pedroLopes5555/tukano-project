@@ -64,6 +64,17 @@ public class Test {
 		
 		blobs.upload(blobUrl.toString(), randomBytes( 100 ), token);
 
+
+		var blobUrl2 = URI.create(s1.value().getBlobUrl());
+		System.out.println( "------->" + blobUrl2 );
+		
+		var blobId2 = new File( blobUrl2.getPath() ).getName();
+		System.out.println( "BlobID:" + blobId2 );
+		
+		var token2 = blobUrl2.getQuery().split("=")[1];
+		
+		blobs.upload(blobUrl2.toString(), randomBytes( 100 ), token2);
+
 		
 		var s2id = s2.value().getShortId();
 		
