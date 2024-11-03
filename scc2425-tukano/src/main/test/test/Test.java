@@ -62,11 +62,11 @@ public class Test {
 		
 		var token = blobUrl.getQuery().split("=")[1];
 		
-		// blobs.upload(blobUrl.toString(), randomBytes( 100 ), token);
+		blobs.upload(blobUrl.toString(), randomBytes( 100 ), token);
 
 		// blobs.delete("http://DESKTOP-FG3D78E:8080/rest/blobs/liskov+552c8f96-e3ca-431c-bcf1-25a81f15b716?token=aaaaaaaaaaaaaaaaaaaaa", blobId);
 
-		blobs.delete("http://DESKTOP-FG3D78E:8080/rest/blobs/wales", blobId);
+		// blobs.delete("http://DESKTOP-FG3D78E:8080/rest/blobs/wales", blobId);
 		
 		var s2id = s2.value().getShortId();
 		

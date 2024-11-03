@@ -13,6 +13,7 @@ import tukano.impl.Token;
  * A short is timestamped when it is created.
  *
  */
+
 @Entity
 public class Short {
 	
