@@ -1,0 +1,15 @@
+config:
+  target: "http://localhost:8080/rest"
+  phases:
+    - duration: 10
+      arrivalRate: 1
+
+scenarios:
+  - flow:
+      - post:
+          url: "/shorts"
+          json:
+            username: "wales"
+            password: "12345"
+
+# IN THIS TEST REPLACE THE USERNAME AND PASSWORD BY DERIED USER

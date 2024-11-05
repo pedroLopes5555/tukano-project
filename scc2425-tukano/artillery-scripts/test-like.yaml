@@ -1,0 +1,17 @@
+config:
+  target: "http://localhost:8080/rest"
+  phases:
+    - duration: 1
+      arrivalRate: 1
+
+scenarios:
+  - flow:
+      - post:
+          url: "/shorts/like"
+          json:
+            shortId: "short_example_id"
+            username: "liskov"
+            like: true
+            password: "54321"
+
+# IN THIS TEST WE HAVE TO CHANGE BOTH SHORTID, USERNAME AND PASSWORD CONSIDERING THE USERS WE WANT TO TEST

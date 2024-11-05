@@ -1,0 +1,16 @@
+config:
+  target: "http://localhost:8080/rest"
+  phases:
+    - duration: 60
+      arrivalRate: 2
+
+scenarios:
+  - flow:
+      - post:
+          url: "/blobs/user_blob_id"  # Replace with actual blobId if needed
+          headers:
+            Content-Type: "application/octet-stream"
+          qs:
+            token: "example_token"  # Query parameter for token
+          body: !!binary |
+            AAECAwQFBgcICQoLDA0ODw==

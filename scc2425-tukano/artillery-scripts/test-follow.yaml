@@ -1,0 +1,17 @@
+config:
+  target: "http://localhost:8080/rest"
+  phases:
+    - duration: 1
+      arrivalRate: 1
+
+scenarios:
+  - flow:
+      - post:
+          url: "/shorts/follow"
+          json:
+            username: "liskov"              
+            target: "wales"
+            follow: true
+            password: "54321"
+
+# IN THIS TEST WE HAVE TO CHANGE BOTH USERNAME, TARGET AND PASSWORD CONSIDERING THE USERS WE WANT TO TEST

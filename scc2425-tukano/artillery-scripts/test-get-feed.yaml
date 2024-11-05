@@ -1,0 +1,14 @@
+config:
+  target: "http://localhost:8080/rest"
+  phases:
+    - duration: 60
+      arrivalRate: 2
+
+scenarios:
+    flow:
+      - get:
+          url: "/shorts/{{ userId }}/feed"  
+          qs:
+            password: "example_password"  
+
+# IN THIS CHANGE USERID AND PASSWORD FOR THE DESIRED USER
