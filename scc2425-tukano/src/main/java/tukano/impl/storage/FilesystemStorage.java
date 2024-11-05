@@ -22,7 +22,7 @@ public class FilesystemStorage implements BlobStorage {
 	private static final String DEFAULT_ROOT_DIR = "/tmp/";
 
 	private static BlobContainerClient _blobClient;
-	String storageConnectionString = "#####";
+	String storageConnectionString = "######";
 	private static final String BLOBS_CONTAINER_NAME = "blobs";
 
 	public FilesystemStorage() {

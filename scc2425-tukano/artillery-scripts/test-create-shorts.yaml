@@ -1,15 +1,11 @@
 config:
   target: "http://localhost:8080/rest"
   phases:
-    - duration: 10
+    - duration: 200
       arrivalRate: 1
 
 scenarios:
   - flow:
       - post:
-          url: "/shorts"
-          json:
-            username: "wales"
-            password: "12345"
-
-# IN THIS TEST REPLACE THE USERNAME AND PASSWORD BY DERIED USER
+          url: "/shorts/user_e51c7e86-aec1-43c4-a0c6-b759664aaded?pwd=e51c7e86-aec1-43c4-a0c6-b759664aaded"  # Use the desired user ID here
+  # Replace with the desired password

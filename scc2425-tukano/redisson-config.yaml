@@ -1,6 +1,6 @@
 singleServerConfig:
-  address: "####"
-  password: "######"  # Replace with the actual access key from Azure
+  address: ####
+  password: ####  # Replace with the actual access key from Azure
   connectionPoolSize: 10
   connectionMinimumIdleSize: 2
   idleConnectionTimeout: 10000

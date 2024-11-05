@@ -1,7 +1,7 @@
 config:
-  target: "http://localhost:8080/tukano-1/rest"
+  target: "http://localhost:8080/rest"
   phases:
-    - duration: 10
+    - duration: 200
       arrivalRate: 1
 
 scenarios:
@@ -9,7 +9,7 @@ scenarios:
       - post:
           url: "/users"
           json:
-            username: "user_{{ $randomString }}"
-            password: "{{ $randomString }}"
-            email: "user{{ $randomInt }}@example.com"
-            name: "User {{ $randomInt }}"
+            userId: "user_{{ $uuid }}"  # Use uuid to ensure unique userId
+            pwd: "{{ $uuid }}"       # Use the random integer defined in `variables`
+            email: "user{{ $uuid }}@example.com"  # Generate unique email
+            displayName: "User {{ $uuid }}"  # Generate unique display name

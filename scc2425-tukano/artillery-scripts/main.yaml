@@ -1,0 +1,55 @@
+config:
+  target: "http://localhost:8080/rest"  # Replace with actual server URI
+  phases:
+    - duration: 120  # Adjust based on your test duration needs
+      arrivalRate: 5  # Start with 5 new virtual users per second
+  defaults:
+    headers:
+      Content-Type: "application/json"
+  variables:
+    baseUsername: "user"
+    basePassword: "pass123"
+    baseEmailDomain: "@example.com"
+    fullNamePrefix: "User Name"
+
+scenarios:
+  - flow:
+      - loop:
+          count: 1000
+          flow:  # Add this `flow` keyword here
+            - name: "Create and interact with unique user"
+              flow:
+                # 1. Create a user with unique username, email, and password
+                - name: "Create user"
+                  post:
+                    url: "/users"
+                    json:
+                      userId: "{{ baseUsername }}{{ $loopCount }}"
+                      pwd: "{{ basePassword }}{{ $loopCount }}"
+                      email: "{{ baseUsername }}{{ $loopCount }}{{ baseEmailDomain }}"
+                      displayName: "{{ fullNamePrefix }} {{ $loopCount }}"
+
+                # 2. Update user information
+                - name: "Update user"
+                  put:
+                    url: "/users/{{ baseUsername }}{{ $loopCount }}?pwd={{ basePassword }}{{ $loopCount }}"
+                    json:
+                      userId: "{{ baseUsername }}{{ $loopCount }}"
+                      pwd: "{{ basePassword }}{{ $loopCount }}"
+                      email: "updated_{{ baseUsername }}{{ $loopCount }}{{ baseEmailDomain }}"
+                      displayName: "{{ fullNamePrefix }} {{ $loopCount }}"
+
+                # 3. Create a short post for the user
+                - name: "Create short for user"
+                  post:
+                    url: "/shorts/{{ baseUsername }}{{ $loopCount }}?pwd={{ basePassword }}{{ $loopCount }}"
+
+                # 4. Upload blob related to the user
+                - name: "Upload blob for user"
+                  post:
+                    url: "/blobs/blob-{{ baseUsername }}{{ $loopCount }}?token=dummy-token"  # Replace 'dummy-token' with an actual token if available
+                    headers:
+                      Content-Type: "application/octet-stream"
+                    body: "{{ randomBytesBase64(100) }}"  # Encode 100 random bytes as base64
+
+                - think: 1
