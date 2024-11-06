@@ -36,8 +36,8 @@ utils/DB.class
 utils/Queues.class
 tukano/api/Result.class
 utils/Hibernate.class
-tukano/clients/rest/RestClient.class
 tukano/impl/Token.class
+tukano/clients/rest/RestClient.class
 utils/Hash.class
 tukano/impl/JavaShorts.class
 utils/IP.class
