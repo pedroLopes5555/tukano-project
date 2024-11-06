@@ -1,16 +1,15 @@
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-<!-- JDBC Database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://c-tukanobd.hytsgjkdobmcxv.postgres.cosmos.azure.com:5432/tukano</property>
-        <property name="hibernate.connection.username">citus</property>
-        <property name="hibernate.connection.password">'qW2sD-=w%]bwnf</property>
+        <property name="connection.url">##</property>
+        <property name="hibernate.connection.username">##</property>
+        <property name="hibernate.connection.password">##</property>
         <property name="hibernate.default_schema">public</property>
 
         <property name="hibernate.cache.use_second_level_cache">true</property>
-        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.internal.NoCachingRegionFactory</property>
-        <property name="hibernate.cache.redisson.config">redisson-config.yaml</property>
+        <property name="hibernate.cache.region.factory_class">###</property>
+        <property name="hibernate.cache.redisson.config">###</property>
 
 
 
