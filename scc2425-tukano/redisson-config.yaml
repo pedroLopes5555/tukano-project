@@ -1,6 +1,6 @@
 singleServerConfig:
-  address: ####
-  password: ####  # Replace with the actual access key from Azure
+  address: "rediss://tukano.redis.cache.windows.net:6380"
+  password: "eNtAuyb6n4XgHh2ksVNGYaBmR6o0sdpl4AzCaGjcCO0="  # Replace with the actual access key from Azure
   connectionPoolSize: 10
   connectionMinimumIdleSize: 2
   idleConnectionTimeout: 10000

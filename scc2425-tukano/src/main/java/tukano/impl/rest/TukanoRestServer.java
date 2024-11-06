@@ -26,7 +26,7 @@ public class TukanoRestServer {
 	}
 	
 	protected TukanoRestServer() {
-		serverURI = String.format(SERVER_BASE_URI, IP.hostname(), PORT);
+		serverURI = String.format(SERVER_BASE_URI, System.getenv("URI"), PORT);
 		Log.info(String.format("SERVER URI : %s\n",  serverURI));
 	}
 
