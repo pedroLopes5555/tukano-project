@@ -2,9 +2,9 @@
 <hibernate-configuration>
     <session-factory>
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">##</property>
-        <property name="hibernate.connection.username">##</property>
-        <property name="hibernate.connection.password">##</property>
+        <property name="connection.url">###</property>
+        <property name="hibernate.connection.username">###</property>
+        <property name="hibernate.connection.password">###</property>
         <property name="hibernate.default_schema">public</property>
 
         <property name="hibernate.cache.use_second_level_cache">true</property>

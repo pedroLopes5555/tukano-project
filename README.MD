@@ -53,3 +53,17 @@ In this page, you will find a tab like the following image.
 ![War file deploy](/images/war_deploy.png)
 Firstly click on Browse and travel to the project directory. When inside the project directory find the target folder and inside will be the following file, tukano-1.war.
 After choosing this file click on Deploy and the server will start running.
+
+![Server available](/images/server.png)
+In this image as it is possible to see, the tukano-1 server is now available and running.
+
+### Setting up variables
+
+During the development, we used environment tables and hidded some others in order to keep the privacy of the keys.
+
+In files hibernate and redisson, you will find some variables with the value "###", replace this by the desired values in order
+to allow the connection.
+
+In order to make the webapp work, on the docker and on the webapp environment there are 2 variables that need to be set being.:
+- storageConnectionString: which is the connection string to blobs
+- URI: which is the URI of the machine running the docker server
